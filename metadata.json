@@ -1,0 +1,33 @@
+{
+  "name": "mpeter-jbossfuse",
+  "version": "0.1.0",
+  "author": "Matt Peter",
+  "summary": "JBoss Fuse Puppet Module",
+  "license": "Apache 2.0",
+  "source": "http://github.com/mpeter/mpeter-jbossfuse",
+  "project_page": "https://github.com/mpeter/mpeter-jbossfuse",
+  "issues_url": "https://github.com/mpeter/mpeter-jbossfuse/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs-stdlib",
+      "version_requirement": ">= 1.0.0"
+    }
+  ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "Debian",
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
+    },
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [
+        "5",
+        "6",
+        "7"
+      ]
+    }
+  ]
+}
