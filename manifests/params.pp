@@ -4,17 +4,20 @@
 # It sets variables according to platform.
 #
 class jbossfuse::params {
-  case $::osfamily {
-    'Debian': {
-      $package_name = 'jbossfuse'
-      $service_name = 'jbossfuse'
-    }
-    'RedHat', 'Amazon': {
-      $package_name = 'jbossfuse'
-      $service_name = 'jbossfuse'
-    }
-    default: {
-      fail("${::operatingsystem} not supported")
-    }
+
+  $service_name = $::osfamily? {
+    'Debian' => 'fuse',
+    'RedHat' => 'fuse',
+    'Amazon' => 'fuse',
+    default  => 'fuse',
   }
+
+  $version            = undef
+  $install_source     = undef
+  $install_cleanup    = true
+  $java_home          = '/usr/java/jdk1.7.0_75'
+  $package_temp_path  = '/tmp'
+  $dirname            = '/opt/fuse'
+  $extract_flags      = '--strip-components=1 -zxf'
+
 }

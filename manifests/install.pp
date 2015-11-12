@@ -2,24 +2,21 @@
 #
 # This class is called from jbossfuse for install.
 #
-class jbossfuse::install {
+class jbossfuse::install (
+){
 
-  package { $::jbossfuse::package_name:
-    ensure => present,
-  }
   $install_source = $jbossfuse::install_source
-
   $install_file = inline_template('<%=File.basename(URI::parse(@install_source).path)%>')
 
-  archive { "$:q
-${install_file}":
-    source        => $wildfly::install_source,
+  archive { "${jbossfuse::package_temp_path}/${install_file}":
+    source        => $install_source,
     extract       => true,
-    extract_path  => $wildfly::dirname,
-    creates       => "${wildfly::dirname}/jboss-modules.jar",
-    user          => $wildfly::user,
-    group         => $wildfly::group,
-    extract_flags => '--strip-components=1 -zxf'
+    extract_path  => $jbossfuse::dirname,
+    creates       => "${jbossfuse::dirname}/lib/karaf.jar",
+    user          => $jbossfuse::user,
+    group         => $jbossfuse::group,
+    extract_flags => $jbossfuse::extract_flags,
+    cleanup       => $jbossfuse::install_cleanup,
   }
 
-  ')
+}

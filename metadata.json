@@ -1,16 +1,20 @@
 {
-  "name": "mpeter-jbossfuse",
+  "name": "puppet-jbossfuse",
   "version": "0.1.0",
-  "author": "Matt Peter",
+  "author": "mpeter",
   "summary": "JBoss Fuse Puppet Module",
   "license": "Apache 2.0",
-  "source": "http://github.com/mpeter/mpeter-jbossfuse",
-  "project_page": "https://github.com/mpeter/mpeter-jbossfuse",
-  "issues_url": "https://github.com/mpeter/mpeter-jbossfuse/issues",
+  "source": "http://github.com/mpeter/puppet-jbossfuse",
+  "project_page": "https://github.com/mpeter/puppet-jbossfuse",
+  "issues_url": "https://github.com/mpeter/puppet-jbossfuse/issues",
   "dependencies": [
     {
       "name": "puppetlabs-stdlib",
       "version_requirement": ">= 1.0.0"
+    },
+    {
+      "name": "nanliu-archive",
+      "version_requirement": ">=0.3.0"
     }
   ],
   "operatingsystem_support": [
